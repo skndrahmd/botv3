@@ -14,13 +14,19 @@
 </head>
 
 <body>
+    <h1>HR - Bot</h1>
     <input id="recordNumber" type="text" placeholder="Enter phone number of employee" />
     <button onclick="getRecord()">Get record</button>
+    <div class="button-container">
+        <button id="deleteButton" onclick="deleteRecord()">Delete record</button>
+        <button id="updateButton" onclick="updateRecord()">Update record</button>
+    </div>
 
     <div id="record"></div>
-
+ 
     <button onclick="getAllRecords()">Get all employee information/records</button>
 
+    
     <div id="all_records"></div>
 
 
@@ -110,9 +116,17 @@
                 }
             });
         }
-
-
-
+       
+   
+            function deleteRecord() {
+              
+            }
+            
+            function updateRecord() {
+                
+            }
+        
+       
 
 
     </script>
