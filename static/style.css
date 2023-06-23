@@ -1,0 +1,67 @@
+/* Set background color and center align the content */
+body {
+  background-color: #f4f4f4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  flex-direction: column;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Set styles for input field */
+input[type="text"] {
+  padding: 12px;
+  font-size: 16px;
+  border: 2px solid #ddd;
+  border-radius: 4px;
+  margin-bottom: 12px;
+  width: 300px;
+  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+}
+
+/* Set styles for buttons */
+button {
+  padding: 12px 24px;
+  font-size: 16px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 65px;
+  cursor: pointer;
+  margin-bottom: 12px;
+  transition: background-color 0.3s ease;
+  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+}
+
+/* Change button background color on hover */
+button:hover {
+  background-color: #45a049;
+}
+
+/* Set styles for record container */
+#record, #all_records {
+  padding: 12px;
+  border: 2px solid #ddd;
+  border-radius: 4px;
+  width: 300px;
+  background-color: white;
+  margin-bottom:2rem;
+  margin-top:2rem;
+  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+}
+
+/* Set styles for list items */
+li {
+  margin-bottom: 8px;
+}
+
+/* Add margin between list items */
+li + li {
+  margin-top: 8px;
+}
+
+/* Add space between record sections */
+#all_records br {
+  margin-bottom: 12px;
+}
