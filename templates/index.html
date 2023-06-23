@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <title>Chat with Bot</title>
+    <title>HR Chatbot</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <style>
         #chatbox {
@@ -10,16 +11,18 @@
             border: 1px solid black;
             overflow: auto;
         }
+
         #userInput {
             width: 400px;
         }
     </style>
 </head>
+
 <body>
     <input id="recordNumber" type="text" placeholder="Enter phone number of employee" />
     <button onclick="getRecord()">GET Record</button>
 
-    <div id="name"></div>
+    <div id="record"></div>
 
 
     <script>
@@ -33,25 +36,33 @@
                 type: 'POST',
                 contentType: 'application/json',
 
-                success: function(response) {
+                success: function (response) {
 
-                   let obj = JSON.parse(response)
-                   let keys = []
-                   let values = []
+                    document.getElementById('record').innerHTML = ""
 
-                   for(let key in obj){
-                    if(obj.hasOwnProperty(key)){
-                        keys.push(key)
-                        values.push(obj[key])
-                    }    
-                   };
+                    let obj = JSON.parse(response)
+                    let keys = []
+                    let values = []
 
-                   document.getElementById('name').innerText = JSON.parse(response)["name"];
-                   console.log(JSON.parse(response))
-                   console.log(keys)
-                   console.log(values)
+                    for (let key in obj) {
+                        if (obj.hasOwnProperty(key)) {
+                            keys.push(key)
+                            values.push(obj[key])
+                        }
+                    };
+
+
+                    for (let i = 0; i < keys.length; i++) {
+                        let list = document.createElement('li');
+                        list.innerText = keys[i] + "=" + values[i];
+                        document.querySelector('#record').appendChild(list);
+                    }
+
+                    console.log(JSON.parse(response))
+                    console.log(keys)
+                    console.log(values)
                 },
-                error: function(error) {
+                error: function (error) {
                     console.log(error);
                 }
             });
@@ -62,4 +73,5 @@
 
     </script>
 </body>
+
 </html>

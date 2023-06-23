@@ -115,6 +115,7 @@ def get_response():
      
      data = request.get_json()  
      recordNumber = data['recordNumber'] 
+     recordNumber = "92" + recordNumber[-10:]
 
      conn = create_connection()
      
