@@ -148,6 +148,47 @@ def get_response():
      return (response_text)
 
 
+
+@app.route('/get-all-records', methods=['POST'])
+def get_all_records():
+     
+ 
+     conn = create_connection()
+     
+     with conn:
+            cur = conn.cursor()
+            cur.execute(f"SELECT e.*, j.title AS job_title, j.desc AS job_description, d.name AS department_name FROM employee e JOIN jobs j ON e.job_id = j.id JOIN department d ON e.dept_id = d.id;")
+
+            user_data = cur.fetchall()
+         
+            if user_data is None:
+                response_text = "Sorry, I couldn't find your information in the database. Please try again."
+            else:
+                # Convert user data to JSON format
+                employees = []
+
+                for i in user_data:
+                    user_json = {
+                        "id": i[0], 
+                        "salary": i[1], 
+                        "name": i[2],
+                        "email": i[3],
+                        "phone": i[4], 
+                        "job_id": i[5],
+                        "dept_id": i[6],
+                        "hire_date": i[7], 
+                        "jobe_title": i[8], 
+                        "job_description": i[9], 
+                        "department_name": i[10]  
+                    }
+
+                    employees.append(user_json)
+
+                response_text = json.dumps(employees)
+
+     return (response_text)
+
+
 # Run the Flask application
 if __name__ == "__main__":
     app.run(debug=True)

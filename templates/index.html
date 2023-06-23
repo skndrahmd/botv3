@@ -5,24 +5,21 @@
     <title>HR Chatbot</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <style>
-        #chatbox {
-            width: 500px;
-            height: 400px;
-            border: 1px solid black;
-            overflow: auto;
-        }
-
-        #userInput {
-            width: 400px;
-        }
+    body {
+        
+    }
     </style>
 </head>
 
 <body>
     <input id="recordNumber" type="text" placeholder="Enter phone number of employee" />
-    <button onclick="getRecord()">GET Record</button>
+    <button onclick="getRecord()">Get record</button>
 
     <div id="record"></div>
+
+    <button onclick="getAllRecords()">Get all employee information/records</button>
+
+    <div id="all_records"></div>
 
 
     <script>
@@ -67,6 +64,51 @@
                 }
             });
         }
+
+
+
+        function getAllRecords() {
+            // var recordNumber = document.getElementById('recordNumber').value;
+
+            $.ajax({
+                url: '/get-all-records',
+                data: JSON.stringify({ 'recordNumber': recordNumber }),
+                type: 'POST',
+                contentType: 'application/json',
+
+                success: function (response) {
+
+                    document.getElementById('all_records').innerHTML = ""
+
+                    let lst = JSON.parse(response)
+                    let keys = []
+                    let values = []
+
+                    for (let key in lst[0]) {
+                        if (lst[0].hasOwnProperty(key)) {
+                            keys.push(key)
+                        }
+                    };
+
+                  
+                    for (const obj of lst){
+                        let br = document.createElement('br');
+                        for (const key of keys){
+                            console.log(obj[key])
+                            let list = document.createElement('li');
+                            list.innerText = key + "= " + obj[key];
+                            document.querySelector('#all_records').appendChild(list);
+                        }
+                        document.querySelector('#all_records').appendChild(br);
+                    }
+
+                },
+                error: function (error) {
+                    console.log(error);
+                }
+            });
+        }
+
 
 
 
