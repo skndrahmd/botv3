@@ -19,7 +19,7 @@ def read_txt_file(filename):
 def create_connection():
     conn = None;
     try:
-        conn = sqlite3.connect(r"C:\Users\sikan\OneDrive\Desktop\database\employees.db") # Use your path
+        conn = sqlite3.connect(r"employees.db") # Use your path
         print(f'successful connection with sqlite version {sqlite3.version}')
     except:
         print("something is wrong!")
