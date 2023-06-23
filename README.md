@@ -1,2 +1,2 @@
-# HR_bot
+# HR_Bot
  
