@@ -1,32 +1,33 @@
 <!DOCTYPE html>
 <html>
-   
+
 
 <head>
     <link rel="stylesheet" type="text/css" href="static\style.css">
     <title>HR Chatbot</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <style>
-    body {
-        
-    }
-    </style>
 </head>
 
 <body>
-    <h1>HR - Bot</h1>
+    <div style="text-align: center;">
+    <h1 style="color:#C06C84;font-size:400%;text-shadow: 0px 3px 5px #000000;  font-family: 'Montserrat', sans-serif;">HR Bot</h1>
+    <hr>
+    </div>
     <input id="recordNumber" type="text" placeholder="Enter phone number of employee" />
+    
+    <div id"first">
     <button onclick="getRecord()">Get record</button>
+    <button onclick="updateRecord()">Update record</button>
+    </div>
+
     <div class="button-container">
         <button id="deleteButton" onclick="deleteRecord()">Delete record</button>
-        <button id="updateButton" onclick="updateRecord()">Update record</button>
     </div>
 
     <div id="record"></div>
- 
+
     <button onclick="getAllRecords()">Get all employee information/records</button>
 
-    
     <div id="all_records"></div>
 
 
@@ -118,13 +119,13 @@
         }
        
    
-            function deleteRecord() {
-              
-            }
+        function deleteRecord() {
             
-            function updateRecord() {
-                
-            }
+        }
+        
+        function updateRecord() {
+            
+        }
         
        
 

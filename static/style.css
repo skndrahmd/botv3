@@ -1,12 +1,19 @@
 /* Set background color and center align the content */
 body {
-  background-color: #f4f4f4;
+  background-color: #1D2D4C;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  /* min-height: 100vh; */
   flex-direction: column;
-  font-family: 'Montserrat', sans-serif;
+}
+hr {
+  height:2px;
+  border-width:0px;
+  background-color:#606060;
+  width:700px;
+  margin-bottom: 50px;
+  margin-top: -10px;
 }
 
 /* Set styles for input field */
@@ -15,15 +22,15 @@ input[type="text"] {
   font-size: 16px;
   border: 2px solid #ddd;
   border-radius: 4px;
-  margin-bottom: 12px;
+  margin-bottom: 1rem;
   width: 300px;
-  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 5px 0px 0px rgba(0, 0, 0, 0.5);
 }
 
 /* Set styles for buttons */
 button {
   padding: 12px 24px;
-  font-size: 16px;
+  font-size: 15px;
   background-color: #4caf50;
   color: white;
   border: none;
@@ -31,7 +38,9 @@ button {
   cursor: pointer;
   margin-bottom: 12px;
   transition: background-color 0.5s ease;
-  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 5px 0px 0px rgba(0, 0, 0, 0.5);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
 }
 
 /* Change button background color on hover */
@@ -46,11 +55,15 @@ button:hover {
   border-radius: 4px;
   width: 300px;
   background-color: white;
-  margin-bottom:2rem;
-  margin-top:2rem;
-  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+  margin-bottom:1rem;
+  margin-top:1rem;
+  box-shadow: 0px 5px 0px 0px rgba(0, 0, 0, 0.5);
+  font-family: 'Montserrat', sans-serif;
 }
-
+#recordNumber{
+  font-size: small;
+  font-family: 'Montserrat', sans-serif;
+}
 /* Set styles for list items */
 li {
   margin-bottom: 8px;
@@ -58,7 +71,7 @@ li {
 
 /* Add margin between list items */
 li + li {
-  margin-top: 8px;
+  margin-top: 10px;
 }
 
 /* Add space between record sections */
@@ -66,9 +79,9 @@ li + li {
   margin-bottom: 12px;
 }
 /* Set styles for delete and update buttons */
-button#deleteButton, button#updateButton {
+button#deleteButton{
   padding: 12px 24px;
-  font-size: 16px;
+  font-size: 15px;
   background-color: #f44336;
   color: white;
   border: none;
@@ -79,7 +92,7 @@ button#deleteButton, button#updateButton {
 }
 
 /* Change delete and update button background color on hover */
-button#deleteButton:hover, button#updateButton:hover {
+button#deleteButton:hover {
   background-color: #d32f2f;
 }
 .button-container {
