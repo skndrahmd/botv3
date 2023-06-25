@@ -15,7 +15,7 @@
     </div>
     <input id="recordNumber" type="text" placeholder="Enter phone number of employee" />
     
-    <div id"first">
+    <div id="first">
     <button onclick="getRecord()">Get record</button>
     <button onclick="updateRecord()">Update record</button>
     </div>
@@ -29,6 +29,8 @@
     <button onclick="getAllRecords()">Get all employee information/records</button>
 
     <div id="all_records"></div>
+
+    <button id="hide-button" onclick="hide()" style="display: none;">Hide Records</button>
 
 
     <script>
@@ -111,6 +113,9 @@
                         document.querySelector('#all_records').appendChild(br);
                     }
 
+                    document.getElementById('all_records').style.display = 'block';
+                    document.getElementById('hide-button').style.display = 'block';
+
                 },
                 error: function (error) {
                     console.log(error);
@@ -127,6 +132,10 @@
             
         }
         
+        function hide(){
+            document.getElementById('all_records').style.display = 'none';
+            document.getElementById('hide-button').style.display = 'none';
+        }
        
 
 
